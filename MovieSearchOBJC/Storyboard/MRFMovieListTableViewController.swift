@@ -48,7 +48,6 @@ class MRFMovieListTableViewController: UITableViewController, UISearchBarDelegat
         let movie = MRFMovieController.sharedInstance().movies[indexPath.row]
         
         MRFMovieController.sharedInstance().fetchPostImage(with: movie) { (image) in
-//            cell.movieImageView = nil
             print("calling fetch image inside the cellForAtRow")
             guard let returnedImage = image else {
                 print("Error getting poster image from the server: \(#function)")
@@ -62,15 +61,4 @@ class MRFMovieListTableViewController: UITableViewController, UISearchBarDelegat
      
      return cell
      }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

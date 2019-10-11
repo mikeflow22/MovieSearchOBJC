@@ -26,7 +26,6 @@ class MRFMovieCellTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var overviewTextView: UITextView!
 
-    
     private func updateViews(){
         guard let passedInMovie = movie else {
             print("Error passing movie into cell")
@@ -40,6 +39,5 @@ class MRFMovieCellTableViewCell: UITableViewCell {
             return
         }
         movieImageView.image = passedInPosterImage
-//        movieImageView.image = posterImage
     }
 }
