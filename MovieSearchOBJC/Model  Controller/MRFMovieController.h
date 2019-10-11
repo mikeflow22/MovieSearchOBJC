@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MRFMovieController : NSObject
 //Create data source of truth
-@property NSArray<MRFMovie *> *movies;
+@property (nonatomic, copy) NSArray<MRFMovie *> *movies;
 
 + (MRFMovieController *)sharedInstance;
 

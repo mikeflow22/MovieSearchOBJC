@@ -19,7 +19,6 @@ class MRFMovieListTableViewController: UITableViewController, UISearchBarDelegat
     
     //MARK: - SearchBar Delegate Methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
         guard let title = searchBar.text, !title.isEmpty else {
             print("Error getting text out of searchbar")
             return
@@ -30,7 +29,10 @@ class MRFMovieListTableViewController: UITableViewController, UISearchBarDelegat
                 print("Called the fetch movie function in table view controller")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.searchBar.resignFirstResponder()
                 }
+            } else {
+                print("Error actually calling the fetch movie image")
             }
         }
     }
@@ -46,12 +48,16 @@ class MRFMovieListTableViewController: UITableViewController, UISearchBarDelegat
         let movie = MRFMovieController.sharedInstance().movies[indexPath.row]
         
         MRFMovieController.sharedInstance().fetchPostImage(with: movie) { (image) in
+//            cell.movieImageView = nil
+            print("calling fetch image inside the cellForAtRow")
             guard let returnedImage = image else {
                 print("Error getting poster image from the server: \(#function)")
                 return
             }
-            cell.movie = movie
-            cell.posterImage = returnedImage
+            DispatchQueue.main.async {
+                cell.movie = movie
+                cell.posterImage = returnedImage
+            }
         }
      
      return cell

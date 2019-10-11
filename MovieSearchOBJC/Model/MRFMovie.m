@@ -14,7 +14,7 @@ NSString *const kRating = @"vote_average";
 NSString *const kPoster = @"poster_path";
 
 @implementation MRFMovie
-- (MRFMovie *)initMovieWithTitle:(NSString *)title overview:(NSString *)overview rating:(double)rating poster:(NSString *)poster
+- (instancetype)initMovieWithTitle:(NSString *)title overview:(NSString *)overview rating:(double)rating poster:(NSString *)poster
 {
     self = [super init];
     if (self)

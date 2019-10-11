@@ -10,12 +10,36 @@ import UIKit
 
 class MRFMovieCellTableViewCell: UITableViewCell {
 
-    var movie: MRFMovie?
-    var posterImage: UIImage?
+    var movie: MRFMovie? {
+        didSet {
+            updateViews()
+        }
+    }
+    var posterImage: UIImage?  {
+        didSet {
+            updateViews()
+        }
+    }
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var overviewTextView: UITextView!
 
+    
+    private func updateViews(){
+        guard let passedInMovie = movie else {
+            print("Error passing movie into cell")
+            return
+        }
+        titleLabel.text = passedInMovie.title
+        ratingLabel.text = "\(passedInMovie.rating)"
+        overviewTextView.text = passedInMovie.overview
+        guard let passedInPosterImage = posterImage else {
+            print("Error passing in poster image to cell")
+            return
+        }
+        movieImageView.image = passedInPosterImage
+//        movieImageView.image = posterImage
+    }
 }

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly, nullable) NSString *poster;
 @property (nonatomic, readonly) double rating;
 
-- (MRFMovie *)initMovieWithTitle:(NSString *)title overview:(NSString *)overview rating:(double)rating poster:(NSString *)poster;
+- (instancetype)initMovieWithTitle:(NSString *)title overview:(NSString *)overview rating:(double)rating poster:(NSString *)poster;
 
 @end
 

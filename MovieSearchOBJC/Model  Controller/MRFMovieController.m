@@ -37,9 +37,9 @@ NSString *const kResultsDictionaryKey = @"results";
     urlComponents.queryItems =  @[apiQueryItem, queryQueryItem];
     
     NSURL *finalURL = urlComponents.URL;
-    NSLog(@"THIS IS THE FETCH MOVIE FINAL URL: %@", finalURL);
     
     [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"THIS IS THE FETCH MOVIE FINAL URL: %@", finalURL);
         if (error)
         {
             NSLog(@"%@",error.localizedDescription);
@@ -59,18 +59,25 @@ NSString *const kResultsDictionaryKey = @"results";
         }
         
         NSDictionary *topLevelJson = [NSJSONSerialization JSONObjectWithData:data options:2 error:&error];
+        if (!topLevelJson)
+        {
+            NSLog(@"Error parsing JSON data: %@", error);
+            completion(NO);
+            return;
+        }
         
         //results is an ARRAY of (Movie) Dictionaries
         NSArray<NSDictionary *> *resultsDictionary = topLevelJson[kResultsDictionaryKey];
         
         //make a placeholder array to store the movies we get back from all of the dictionaries
-        NSMutableArray<MRFMovie *> *tempHoldingMovieArray = [[NSMutableArray alloc] init];
+        NSMutableArray *tempHoldingMovieArray = [[NSMutableArray alloc] init];
         
         //We don't have to parse anylonger so now we can loop through the array of dictionaries and initialize our  movie object with our initWithDictionary method
         for (NSDictionary *currentMovieDictionary in resultsDictionary)
         {
             MRFMovie *movie = [[MRFMovie alloc] initWithDictionary:currentMovieDictionary];
             [tempHoldingMovieArray addObject:movie];
+            NSLog(@"movie.poster = : %@", movie.poster);
         }
         
         MRFMovieController.sharedInstance.movies = tempHoldingMovieArray;
@@ -81,11 +88,15 @@ NSString *const kResultsDictionaryKey = @"results";
 
 - (void)fetchPostImageWithMovie:(MRFMovie *)movie completion:(void (^)(UIImage * _Nullable))completion
 {
-    NSString *baseURLString = kPosterURL;
-    NSString *moviePosterURLString = [baseURLString stringByAppendingString:movie.poster];
-    NSURL * finalURL = [NSURL URLWithString:moviePosterURLString];
+    NSString *posterURL = movie.poster;
+    NSString *fullURL  = [NSString stringWithFormat:@"%@%@",kPosterURL,posterURL];
+    NSURL *finalURL = [NSURL URLWithString:fullURL];
+//    NSString *baseURLString = kPosterURL;
+//    NSString *moviePosterURLString = [baseURLString stringByAppendingString:movie.poster];
+//    NSURL * finalURL = [NSURL URLWithString:moviePosterURLString];
     
     [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"THIS IS THE IMAGE MOVIE FETCH FINAL URL: %@", finalURL);
         if (error)
         {
             NSLog(@"%@",error.localizedDescription);
