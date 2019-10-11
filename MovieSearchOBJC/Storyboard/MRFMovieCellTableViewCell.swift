@@ -31,8 +31,8 @@ class MRFMovieCellTableViewCell: UITableViewCell {
             print("Error passing movie into cell")
             return
         }
-        titleLabel.text = passedInMovie.title
-        ratingLabel.text = "\(passedInMovie.rating)"
+        titleLabel.text = "Title: \(passedInMovie.title)"
+        ratingLabel.text = "Rating: \(passedInMovie.rating)"
         overviewTextView.text = passedInMovie.overview
         guard let passedInPosterImage = posterImage else {
             print("Error passing in poster image to cell")

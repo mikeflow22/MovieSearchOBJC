@@ -9,7 +9,7 @@
 import UIKit
 
 class MRFMovieListTableViewController: UITableViewController, UISearchBarDelegate {
-    
+
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
