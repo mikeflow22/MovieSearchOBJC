@@ -10,7 +10,7 @@
 //these are to be used to parse through the dictionary
 NSString *const kTitle = @"title";
 NSString *const kOverview = @"overview";
-NSString *const kRating = @"rating";
+NSString *const kRating = @"vote_average";
 NSString *const kPoster = @"poster_path";
 
 @implementation MRFMovie

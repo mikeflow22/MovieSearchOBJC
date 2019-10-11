@@ -11,6 +11,7 @@ import UIKit
 class MRFMovieCellTableViewCell: UITableViewCell {
 
     var movie: MRFMovie?
+    var posterImage: UIImage?
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
