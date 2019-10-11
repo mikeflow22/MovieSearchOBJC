@@ -81,7 +81,34 @@ NSString *const kResultsDictionaryKey = @"results";
 
 - (void)fetchPostImageWithMovie:(MRFMovie *)movie completion:(void (^)(UIImage * _Nullable))completion
 {
+    NSString *baseURLString = kPosterURL;
+    NSString *moviePosterURLString = [baseURLString stringByAppendingString:movie.poster];
+    NSURL * finalURL = [NSURL URLWithString:moviePosterURLString];
     
+    [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error)
+        {
+            NSLog(@"%@",error.localizedDescription);
+            completion(nil);
+            return;
+        }
+        
+        if (response) {
+            NSLog(@"%@", response);
+        }
+        
+            //no data then return
+        if (!data){
+            NSLog(@"No data returned fetching poster images for movies");
+            completion(nil);
+            return;
+        }
+        
+        //turn data into an image
+        UIImage *image = [UIImage imageWithData:data];
+        completion(image);
+        
+    }]resume];
 }
 
 @end
