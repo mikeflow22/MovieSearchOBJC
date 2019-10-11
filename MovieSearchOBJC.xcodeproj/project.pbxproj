@@ -16,6 +16,7 @@
 		1BA9E6642350D47600C30276 /* MRFMovieCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6632350D47600C30276 /* MRFMovieCellTableViewCell.swift */; };
 		1BA9E6662350D49C00C30276 /* MRFMovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6652350D49C00C30276 /* MRFMovieListTableViewController.swift */; };
 		1BA9E6692350D57600C30276 /* MRFMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6682350D57600C30276 /* MRFMovie.m */; };
+		1BA9E66C2350D86E00C30276 /* MRFMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E66B2350D86E00C30276 /* MRFMovieController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		1BA9E6652350D49C00C30276 /* MRFMovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MRFMovieListTableViewController.swift; path = MovieSearchOBJC/Storyboard/MRFMovieListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		1BA9E6672350D57600C30276 /* MRFMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRFMovie.h; sourceTree = "<group>"; };
 		1BA9E6682350D57600C30276 /* MRFMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFMovie.m; sourceTree = "<group>"; };
+		1BA9E66A2350D86E00C30276 /* MRFMovieController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRFMovieController.h; sourceTree = "<group>"; };
+		1BA9E66B2350D86E00C30276 /* MRFMovieController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFMovieController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 		1BA9E65E2350D2FB00C30276 /* Model  Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1BA9E66A2350D86E00C30276 /* MRFMovieController.h */,
+				1BA9E66B2350D86E00C30276 /* MRFMovieController.m */,
 			);
 			path = "Model  Controller";
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA9E66C2350D86E00C30276 /* MRFMovieController.m in Sources */,
 				1BA9E6452350D1E900C30276 /* AppDelegate.m in Sources */,
 				1BA9E6562350D1EA00C30276 /* main.m in Sources */,
 				1BA9E6642350D47600C30276 /* MRFMovieCellTableViewCell.swift in Sources */,
