@@ -15,6 +15,7 @@
 		1BA9E6562350D1EA00C30276 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6552350D1EA00C30276 /* main.m */; };
 		1BA9E6642350D47600C30276 /* MRFMovieCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6632350D47600C30276 /* MRFMovieCellTableViewCell.swift */; };
 		1BA9E6662350D49C00C30276 /* MRFMovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6652350D49C00C30276 /* MRFMovieListTableViewController.swift */; };
+		1BA9E6692350D57600C30276 /* MRFMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9E6682350D57600C30276 /* MRFMovie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		1BA9E6622350D47500C30276 /* MovieSearchOBJC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieSearchOBJC-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BA9E6632350D47600C30276 /* MRFMovieCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MRFMovieCellTableViewCell.swift; path = MovieSearchOBJC/Storyboard/MRFMovieCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		1BA9E6652350D49C00C30276 /* MRFMovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MRFMovieListTableViewController.swift; path = MovieSearchOBJC/Storyboard/MRFMovieListTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		1BA9E6672350D57600C30276 /* MRFMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRFMovie.h; sourceTree = "<group>"; };
+		1BA9E6682350D57600C30276 /* MRFMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFMovie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 		1BA9E65D2350D2F600C30276 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BA9E6672350D57600C30276 /* MRFMovie.h */,
+				1BA9E6682350D57600C30276 /* MRFMovie.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				1BA9E6562350D1EA00C30276 /* main.m in Sources */,
 				1BA9E6642350D47600C30276 /* MRFMovieCellTableViewCell.swift in Sources */,
 				1BA9E6482350D1E900C30276 /* SceneDelegate.m in Sources */,
+				1BA9E6692350D57600C30276 /* MRFMovie.m in Sources */,
 				1BA9E6662350D49C00C30276 /* MRFMovieListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
